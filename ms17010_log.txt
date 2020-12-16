@@ -26,3 +26,4 @@
 2018-05-23 23:25:46,582 - INFO - 127.0.0.1 Login failed: STATUS_ACCESS_DENIED
 2018-05-23 23:25:46,582 - INFO - 127.0.0.1 OS:Windows 8.1 Pro 9600
 2018-05-23 23:25:46,582 - INFO - 127.0.0.1***{'vuln': '', 'pwd': '', 'target': '127.0.0.1', 'OS': 'Windows 8.1 Pro 9600', 'logon': 'NO', 'piped': '', 'arch': '', 'user': ''}
+2020-12-16 03:17:38,930 - DEBUG - 
